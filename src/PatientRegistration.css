@@ -1,0 +1,121 @@
+.login-container {
+  background-color: #D1F8EF; /* Kept the original background */
+  padding: 40px;
+  max-width: 700px;
+  margin: 50px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+h2 {
+  text-align: center;
+  color: #3674B5;
+  background-color: #FFFAE1;
+  padding: 20px;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 0 auto 30px;
+  border: 3px solid #D1F8EF;
+  font-size: 32px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjusted gap for better spacing within the form */
+}
+
+/* White container for inputs */
+.input-container {
+  background-color: white; /* White background for input area */
+  padding: 30px; /* Padding inside the white container */
+  border-radius: 12px; /* Rounded corners for the white container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for the white container */
+  margin-bottom: 20px; /* Space below the input container */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Spacing between form groups inside white container */
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px; /* Slightly reduced padding for inputs inside white container */
+  border-radius: 6px; /* Slightly smaller border radius for inputs */
+  border: 1px solid #ccc; /* Thinner border for inputs */
+  font-size: 16px; /* Slightly reduced font size for inputs */
+  margin-top: 6px; /* Slightly reduced margin top for inputs */
+}
+
+.login-btn {
+  padding: 16px; /* Slightly reduced button padding */
+  font-size: 18px; /* Slightly reduced button text size */
+  border-radius: 8px;
+  margin-top: 10px; /* Reduced margin top for button */
+  background-color: #3674B5; /* Example button color - adjust as needed */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #275987; /* Darker shade for hover effect */
+}
+
+
+.error {
+  font-size: 16px;
+  padding: 10px;
+  color: #ff3333; /* Example error color - adjust as needed */
+}
+
+.new-user {
+  font-size: 16px;
+  margin-top: 20px; /* Reduced margin top for new user text */
+  text-align: center; /* Centered the new user text */
+}
+
+.new-user a {
+  font-size: 16px;
+  padding: 5px;
+  color: #3674B5; /* Example link color */
+  text-decoration: none; /* Removed underline from link */
+}
+
+.new-user a:hover {
+  text-decoration: underline; /* Underline on hover for link */
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .login-container {
+    margin: 20px;
+    padding: 25px; /* Adjusted padding for smaller screens */
+    max-width: 95%; /* Slightly wider on smaller screens */
+  }
+
+  .input-container {
+    padding: 20px; /* Adjusted input container padding for smaller screens */
+  }
+
+  h2 {
+    font-size: 24px; /* Reduced heading font size for smaller screens */
+    padding: 12px; /* Adjusted heading padding for smaller screens */
+    margin-bottom: 20px; /* Adjusted heading margin for smaller screens */
+  }
+
+  .login-input {
+    padding: 12px; /* Adjusted input padding for smaller screens */
+    font-size: 15px; /* Reduced input font size for smaller screens */
+  }
+
+  .login-btn {
+    padding: 14px; /* Adjusted button padding for smaller screens */
+    font-size: 17px; /* Reduced button font size for smaller screens */
+  }
+
+  .error, .new-user, .new-user a {
+    font-size: 15px; /* Reduced text sizes for smaller screens */
+  }
+}

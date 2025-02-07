@@ -1,0 +1,70 @@
+/* src/LandingPage.css */
+
+/* Full-screen animated gradient background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  body {
+    background: linear-gradient(-45deg, #141E30, #243B55, #141E30);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+  }
+  
+  /* Stylish Heading */
+  h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    gap: 15px; /* Less space between buttons */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Dark & Classy Button Styling */
+  button {
+    background: #2C3E50 !important; /* Dark Blue */
+    color: white !important;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Button Hover Effects */
+  button:hover {
+    transform: scale(1.05);
+    background: #34495E !important; /* Slightly lighter blue on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Button Click Effect */
+  button:active {
+    transform: scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  }
+  

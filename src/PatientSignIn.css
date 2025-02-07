@@ -1,0 +1,51 @@
+/* src/PatientSignIn.css */
+.patient-sign-in {
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .patient-sign-in h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .patient-sign-in p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+  
+  .sign-in-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .option-button {
+    padding: 15px 40px;
+    background-color: #ffffff;
+    color: #4caf50;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .option-button:hover {
+    background-color: #4caf50;
+    color: white;
+    transform: translateY(-5px);
+  }
+  
+  .option-button:active {
+    transform: translateY(1px);
+  }
+  

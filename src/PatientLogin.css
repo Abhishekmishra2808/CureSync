@@ -1,0 +1,68 @@
+.login-container {
+    max-width: 600px; /* Increased from 500px to make the container bigger */
+    margin: 50px auto;
+    padding: 40px; /* Increased padding for more space inside */
+    background-color: #f4f4f9;
+    border-radius: 15px; /* Slightly larger border radius */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  p{
+    color: black;
+  }
+  
+  h2 {
+    color: black;
+    text-align: center;
+    font-size: 28px; /* Increased font size for the heading */
+    margin-bottom: 20px; /* Added margin for better spacing */
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap between form elements */
+  }
+  
+  .login-input {
+    padding: 15px; /* Increased padding for larger input fields */
+    font-size: 18px; /* Increased font size for better readability */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Slightly larger border radius */
+  }
+  
+  .login-btn {
+    padding: 15px; /* Increased padding for a larger button */
+    font-size: 18px; /* Increased font size for the button text */
+    background-color: #578FCA;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Slightly larger border radius */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #3674B5;
+  }
+  
+  .error {
+    color: red;
+    font-size: 16px; /* Increased font size for error messages */
+    text-align: center;
+  }
+  
+  .new-user {
+    text-align: center;
+    margin-top: 25px; /* Increased margin for better spacing */
+    font-size: 16px; /* Increased font size for the "New user" text */
+  }
+  
+  .new-user a {
+    color: #578FCA; /* Added color to the link for better visibility */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .new-user a:hover {
+    text-decoration: underline; /* Added hover effect for the link */
+  }
