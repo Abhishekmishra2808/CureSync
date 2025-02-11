@@ -4,6 +4,22 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const pool = require('./db'); // your postgres connection pool setup
 
+
+const path = require('path');
+;
+
+// ... your existing backend routes and middleware are here ...
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, '..', 'build'))); // Serves from the 'build' folder in the project root (one level up from 'backend')
+
+// The "catchall" handler: for any request that doesn't match a backend route, send back the React app's index.html file.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'build', 'index.html')); //  Path to index.html in the 'build' folder
+});
+
+// ... your server startup code (app.listen(...)) is here ...
+
 app.use(cors());
 app.use(bodyParser.json());
 
