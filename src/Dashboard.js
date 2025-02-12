@@ -7,6 +7,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const patientId = localStorage.getItem('patientId');
+    console.log('Retrieved patientId:', patientId);
 
     if (!patientId) {
       navigate('/login'); // Redirect to login if not authenticated
@@ -31,6 +32,13 @@ const Dashboard = () => {
     }
   }, [navigate]);
 
+  const calculateBMI = (height, weight) => {
+    if (height > 0) {
+      return (weight / ((height / 100) ** 2)).toFixed(2); // BMI formula: weight (kg) / height (m)^2
+    }
+    return null;
+  };
+
   return (
     <div className="dashboard-container">
       {patient ? (
@@ -40,6 +48,10 @@ const Dashboard = () => {
           <p>Height: {patient.height} cm</p>
           <p>Weight: {patient.weight} kg</p>
           <p>Exercise Frequency: {patient.exercise_frequency}</p>
+
+          {/* BMI Calculator */}
+          <h3>BMI Calculator</h3>
+          <p>BMI: {calculateBMI(patient.height, patient.weight)}</p>
         </>
       ) : (
         <p>Loading...</p>
