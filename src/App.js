@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import PatientLogin from "./PatientLogin";  // Import PatientLogin
-import PatientRegistration from "./PatientRegistration";  // Import PatientRegistration
-import Dashboard from './Dashboard';
+import LandingPage from "./LandingPage.js";
+import PatientLogin from "./PatientLogin.js";  // Import PatientLogin
+import PatientRegistration from "./PatientRegistration.js";  // Import PatientRegistration
+import Dashboard from './Dashboard.js';
 
 function App() {
   return (

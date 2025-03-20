@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
+import { registerNewPatient } from '../controllers/userController.js';
+
 const router = express.Router();
-const patientController = require('../controllers/userController');
 
-router.post('/', patientController.registerPatient);
+router.post('/', registerNewPatient);
 
-module.exports = router;
+export default router;

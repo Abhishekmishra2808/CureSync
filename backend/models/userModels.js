@@ -1,6 +1,6 @@
-const client = require('./db');  // Import the PostgreSQL connection
+import client from '../db.js'; // Import the PostgreSQL connection
 
-const registerPatient = (userData, callback) => {
+export const registerPatient = (userData, callback) => {
   const { name, age, height, weight, exercise_frequency, username, password } = userData;
 
   const query = `
@@ -17,5 +17,3 @@ const registerPatient = (userData, callback) => {
     }
   });
 };
-
-module.exports = { registerPatient };

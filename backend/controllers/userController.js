@@ -1,7 +1,7 @@
-const { registerPatient } = require('../models/userModel');
-const bcrypt = require('bcryptjs');
+import { registerPatient } from '../models/userModels.js';
+import bcrypt from 'bcryptjs';
 
-const registerNewPatient = (req, res) => {
+export const registerNewPatient = (req, res) => {
   const { name, age, height, weight, exercise_frequency, username, password } = req.body;
 
   // Hash the password before saving it
@@ -30,5 +30,3 @@ const registerNewPatient = (req, res) => {
     });
   });
 };
-
-module.exports = { registerNewPatient };

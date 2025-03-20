@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import path from 'path';
+import pool from './db.js'; // your postgres connection pool setup
+
 const app = express();
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const pool = require('./db'); // your postgres connection pool setup
-const path = require('path');
 
 // Use CORS middleware
 app.use(cors());
@@ -91,11 +92,11 @@ app.post('/login', async (req, res) => {
 });
 
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, '..', 'build'))); // Serves from the 'build' folder in the project root (one level up from 'backend'))
+app.use(express.static(path.join(path.resolve(), '..', 'build'))); // Serves from the 'build' folder in the project root (one level up from 'backend'))
 
 // The "catchall" handler: for any request that doesn't match a backend route, send back the React app's index.html file.
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'build', 'index.html')); // Path to index.html in the 'build' folder
+    res.sendFile(path.join(path.resolve(), '..', 'build', 'index.html')); // Path to index.html in the 'build' folder
 });
 
 // Server Listening
