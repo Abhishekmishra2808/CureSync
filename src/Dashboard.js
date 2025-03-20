@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto'; // Required for Chart.js
@@ -8,6 +8,42 @@ const Dashboard = () => {
   const [patient, setPatient] = useState(null);
   const [healthScore, setHealthScore] = useState(0); // State for health score
   const navigate = useNavigate();
+
+  const calculateBMI = (height, weight) => {
+    if (height > 0) {
+      return (weight / ((height / 100) ** 2)).toFixed(2); // BMI formula: weight (kg) / height (m)^2
+    }
+    return null;
+  };
+
+  const calculateHealthScore = useCallback((patient) => {
+    const bmi = calculateBMI(patient.height, patient.weight);
+    let score = 50; // Base score
+
+    // Adjust score based on BMI
+    if (bmi >= 18.5 && bmi <= 24.9) {
+      score += 20; // Add points for normal BMI
+    } else {
+      score -= 10; // Deduct points for abnormal BMI
+    }
+
+    // Adjust score based on exercise frequency
+    switch (patient.exercise_frequency.toLowerCase()) {
+      case 'high':
+        score += 30;
+        break;
+      case 'moderate':
+        score += 20;
+        break;
+      case 'low':
+        score += 10;
+        break;
+      default:
+        score += 0; // No additional points for no exercise
+    }
+
+    setHealthScore(Math.min(score, 100)); // Ensure score doesn't exceed 100
+  }, []);
 
   useEffect(() => {
     const patientId = localStorage.getItem('patientId');
@@ -35,43 +71,7 @@ const Dashboard = () => {
 
       fetchPatientData();
     }
-  }, [navigate]);
-
-  const calculateBMI = (height, weight) => {
-    if (height > 0) {
-      return (weight / ((height / 100) ** 2)).toFixed(2); // BMI formula: weight (kg) / height (m)^2
-    }
-    return null;
-  };
-
-  const calculateHealthScore = (patient) => {
-    const bmi = calculateBMI(patient.height, patient.weight);
-    let score = 50; // Base score
-
-    // Adjust score based on BMI
-    if (bmi >= 18.5 && bmi <= 24.9) {
-      score += 20; // Add points for normal BMI
-    } else {
-      score -= 10; // Deduct points for abnormal BMI
-    }
-
-    // Adjust score based on exercise frequency
-    switch (patient.exercise_frequency.toLowerCase()) {
-      case 'high':
-        score += 30;
-        break;
-      case 'moderate':
-        score += 20;
-        break;
-      case 'low':
-        score += 10;
-        break;
-      default:
-        score += 0; // No additional points for no exercise
-    }
-
-    setHealthScore(Math.min(score, 100)); // Ensure score doesn't exceed 100
-  };
+  }, [navigate, calculateHealthScore]);
 
   const pieData = {
     labels: ['Health Score', 'Remaining'],
